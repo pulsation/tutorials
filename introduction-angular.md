@@ -38,11 +38,11 @@ Enfin, le système de directives permet de créer des composants réutilisables,
 * Lancer google chrome en désactivant les contrôles de same origin policy (nécessaire pour les appels de webservices tiers dans les exercice 8, 9 et 10) - par exemple sous windows: 
     * créer un raccourci de Chrome sur le bureau.
     * cliquer avec le bouton droit dessus pour accéder à ses propriétés.
-    * ajouter dans le champ cible tout à la fin : –disable-web-security .
+    * ajouter dans le champ cible tout à la fin : `–disable-web-security`.
 * Se rendre sur le site <http://plnkr.co/> une fois Chrome lancé à partir de ce raccourci.
-* Cliquer sur launch the editor.
-* dans le volet de droite, dans search package, taper angular-ui puis tapper sur enter.
-* Cliquer sur la baguette magique située à droite de angular-ui-bootstrap ainsi que celle de angular-ui.
+* Cliquer sur le bouton *Launch the editor*.
+* Dans le volet de droite, dans le champ *Search packages*, taper *angular-ui-bootstrap* puis cliquer sur la loupe pour lancer la recherche.
+* Cliquer sur la baguette magique située à droite de *angular-ui-bootstrap*.
 
 ###Pour aller plus loin
 * <https://docs.angularjs.org/guide/introduction>
@@ -58,16 +58,21 @@ Dans le fichier *script.js*, ajouter
 
     var app = angular.module('hinnoya', ['ui']);
     
-afin d'instancier un nouvelle application.
+afin d'instancier un nouvelle application. Nous pouvons maintenant l'associer à la balise `<html>` dans le fichier *index.html* en lui ajoutant un attribut `ng-app` :
+
+    <html ng-app="hinnoya">
 
 ###Exercice 2 : Création d'un contrôleur
 
-A la suite de la ligne précédente, ajouter :
+A la suite de la ligne précédente, dans *script.js*, ajouter :
 
     app.controller('MainCtrl', function($scope) {
     }); 
 
 `$scope` représente la couche *ViewModel*, et est injecté automatiquement dans le contrôleur lors de son appel par Angular.
+Associons maintenant le contrôleur à la balise `<body>` de la page *index.html* :
+
+    <body ng-controller="MainCtrl">
 
 ###Exercice 3 : Affectation d'une valeur à une variable du ViewModel
 

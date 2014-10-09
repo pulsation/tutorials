@@ -2,18 +2,18 @@
 
 AngularJS est un *framework javascript open source* développé par Google. Il fournit un modèle structurant pour les *applications WEB*, tout en permettant entre autres d'enrichir le vocabulaire HTML (framework déclaratif). Il offre aussi la possibilité de réaliser des applications WEB monopages (SPA pour *Single Page Applications*).
 
-####Exemples
+###Exemples
 
 Voici quelques applications réalisés avec AngularJS:
 
-* http://sbb.cellfinder.org/ (exploration d'anatomie)
-* http://public.opendatasoft.com/explore/ (explorateur de données ouvertes)
-* http://www.vevo.com/ (plateforme de diffusion vidéo)
-* http://app.hya.io/ (synthétiseur)
+* <http://sbb.cellfinder.org/> (exploration d'anatomie)
+* <http://public.opendatasoft.com/explore/> (explorateur de données ouvertes)
+* <http://www.vevo.com/> (plateforme de diffusion vidéo)
+* <http://app.hya.io/> (synthétiseur)
 
 D'autres exemples sont disponibles sur https://builtwith.angularjs.org/ .
 
-####Valeur ajoutée
+###Valeur ajoutée
 
 Avec des frameworks traditionnels tels que JQuery ou Dojo, la dynamisation d'une page WEB passe par la manipulation directe des instances des éléments HTML qu'elle contient (éléments du DOM), le plus souvent à l'aide de sélecteurs. Il est par conséquent nécessaire de se préoccuper tout particulièrement du fonctionnement du navigateur, ainsi que de l'organisation visuelle de la page HTML lors de la réalisation de l'application. 
 
@@ -39,14 +39,14 @@ Enfin, le système de directives permet de créer des composants réutilisables,
     * créer un raccourci de Chrome sur le bureau.
     * cliquer avec le bouton droit dessus pour accéder à ses propriétés.
     * ajouter dans le champ cible tout à la fin : –disable-web-security .
-* Se rendre sur le site http://plnkr.co/ une fois Chrome lancé à partir de ce raccourci.
+* Se rendre sur le site <http://plnkr.co/> une fois Chrome lancé à partir de ce raccourci.
 * Cliquer sur launch the editor.
 * dans le volet de droite, dans search package, taper angular-ui puis tapper sur enter.
 * Cliquer sur la baguette magique située à droite de angular-ui-bootstrap ainsi que celle de angular-ui.
 
 ###Pour aller plus loin
-* https://docs.angularjs.org/guide/introduction 
-* https://docs.angularjs.org/guide/providers 
+* <https://docs.angularjs.org/guide/introduction>
+* <https://docs.angularjs.org/guide/providers>
 
 ##Association entre les données et leur représentation
 
@@ -57,6 +57,8 @@ Comme indiqué précédemment, AngularJS se base sur une implémentation du dial
 Dans le fichier *script.js*, ajouter
 
     var app = angular.module('hinnoya', ['ui']);
+    
+afin d'instancier un nouvelle application.
 
 ###Exercice 2 : Création d'un contrôleur
 
@@ -65,7 +67,7 @@ A la suite de la ligne précédente, ajouter :
     app.controller('MainCtrl', function($scope) {
     }); 
 
-`$scope` représente la couche *ViewModel*, et est injecté automatiquement dans le contrôleur lors de son appel par Angular par un mécanisme d'inversion de contrôle (IOC).
+`$scope` représente la couche *ViewModel*, et est injecté automatiquement dans le contrôleur lors de son appel par Angular.
 
 ###Exercice 3 : Affectation d'une valeur à une variable du ViewModel
 
@@ -100,7 +102,7 @@ Lorsque l'on clique sur *Run*, le texte *Bonjour Jean-Pierre !* devrait apparai
 
 ###Pour aller plus loin
 
-https://docs.angularjs.org/guide/databinding 
+<https://docs.angularjs.org/guide/databinding>
 
 ##MVW
 
@@ -114,10 +116,11 @@ Enfin, la couche *Model* décrit les données représentées par l'application a
 
 D'autre part, par le biais de l'idiome `$watch`, il est possible de déclencher une fonction écouteur dès qu'une variable de `$scope` est mise à jour.
 
-###Exercice 5 : Ajout d'une balise `<input>` liée à une variable du viewmodel
+###Exercice 5 : Ajout d'une balise `<input>` liée à une variable du ViewModel
 
-Dans index.html, ajouter la ligne suivante à la suite de la ligne qui débute par `<h1>` :
+Dans index.html, ajouter la balise input suivante à la suite de la ligne qui débute par `<h1>` :
 
+    <h1>Hello {{name}}!</h1>
     <input type="text" ng-model="name"></type>
 
 L'attribut *ng-model* permet d'indiquer à quelle variable contenue dans `$scope` cet élément visuel est lié. Ainsi, lorsque l'on modifie la valeur située dans le champ de saisie défini par la balise input, la valeur de la variable du ViewModel name sera automatiquement mise à jour.
@@ -157,9 +160,9 @@ Le code Javascript du contrôleur devrait alors ressembler à :
     }); 
     
 ###Pour aller plus loin
-* https://docs.angularjs.org/api/ng/type/$rootScope.Scope 
-* https://docs.angularjs.org/api/ngResource/service/$resource 
-* https://plus.google.com/+AngularJS/posts/aZNVhj355G2 
+* <https://docs.angularjs.org/api/ng/type/$rootScope.Scope>
+* <https://docs.angularjs.org/api/ngResource/service/$resource>
+* <https://plus.google.com/+AngularJS/posts/aZNVhj355G2>
 
 ##Injection de dépendances
 
@@ -220,8 +223,8 @@ Ajouter la variable de template correspondante dans *index.html* :
     </div>
 
 ###Pour alle plus loin
-* https://docs.angularjs.org/guide/di 
-* https://docs.angularjs.org/api/ngResource/service/$resource 
+* <https://docs.angularjs.org/guide/di>
+* <https://docs.angularjs.org/api/ngResource/service/$resource>
 
 
 ##Directives
@@ -260,8 +263,8 @@ Et enfin, modifier l'appel à la balise :
     <address street="'50 cours de la République'" city="'Villeurbanne'"></address>
 
 ###Pour aller plus loin
-https://docs.angularjs.org/guide/directive 
+<https://docs.angularjs.org/guide/directive>
 
 ## Intégralité du code source de l'exercice
 
-L'ensemble du code source est disponible sur http://plnkr.co/edit/YjqYsh .
+L'ensemble du code source est disponible sur <http://plnkr.co/edit/YjqYsh> .

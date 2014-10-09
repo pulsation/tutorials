@@ -11,17 +11,17 @@ Voici quelques applications réalisés avec AngularJS:
 * <http://www.vevo.com/> (plateforme de diffusion vidéo)
 * <http://app.hya.io/> (synthétiseur)
 
-D'autres exemples sont disponibles sur https://builtwith.angularjs.org/ .
+D'autres exemples sont disponibles sur <https://builtwith.angularjs.org/> .
 
 ###Valeur ajoutée
 
-Avec des frameworks traditionnels tels que JQuery ou Dojo, la dynamisation d'une page WEB passe par la manipulation directe des instances des éléments HTML qu'elle contient (éléments du DOM), le plus souvent à l'aide de sélecteurs. Il est par conséquent nécessaire de se préoccuper tout particulièrement du fonctionnement du navigateur, ainsi que de l'organisation visuelle de la page HTML lors de la réalisation de l'application. 
+Avec des frameworks traditionnels tels que JQuery, la dynamisation d'une page WEB passe par la manipulation directe des instances des éléments HTML qu'elle contient (éléments du DOM), le plus souvent à l'aide de sélecteurs. Il est par conséquent nécessaire de se préoccuper tout particulièrement du fonctionnement du navigateur, ainsi que de l'organisation visuelle de la page HTML lors de la réalisation de l'application. 
 
-Or, l'organisation des éléments visuels ne représente pas forcément la façon dont on souhaite organiser l'application en elle-même.
+Or, l'organisation des éléments visuels ne représente pas forcément la façon dont on souhaite structurer l'application en elle-même.
 
 AngularJS encapsule le dialecte utilisé par JQuery dans une couche bas niveau, ce qui ne rend plus nécessaire la manipulation directe des éléments du DOM lors de la réalisation d'une application. 
 
-En effet, il fournit un mécanisme de liaison *forte et implicite* (on n'a plus besoin de l'exprimer avec du code redondant) entre la vue (page affichée dans le navigateur) et les données qui doivent être représentées visuellement (couche ViewModel).
+En effet, il fournit un mécanisme de liaison *forte et implicite* (on n'a plus besoin de l'exprimer avec du code redondant) entre la vue (page affichée dans le navigateur) et les données qui doivent être représentées visuellement (couche *ViewModel*).
 
 D'autre part, le paradigme MVW (pour Model View Whatever, proche en réalité de MVVM, *Model / View / ViewModel*) sur lequel est basé AngularJS,  permet de structurer d'emblée le code javascript en *couches logicielles* dont les responsabilités sont bien définies :
 
@@ -42,11 +42,10 @@ Enfin, le système de directives permet de créer des composants réutilisables,
 * Se rendre sur le site <http://plnkr.co/> une fois Chrome lancé à partir de ce raccourci.
 * Cliquer sur le bouton *Launch the editor*.
 * Dans le volet de droite, dans le champ *Search packages*, taper *angular-ui-bootstrap* puis cliquer sur la loupe pour lancer la recherche.
-* Cliquer sur la baguette magique située à droite de *angular-ui-bootstrap*.
+* Cliquer sur la baguette magique située à droite du résultat *angular-ui-bootstrap*.
 
 ###Pour aller plus loin
-* <https://docs.angularjs.org/guide/introduction>
-* <https://docs.angularjs.org/guide/providers>
+Introduction officielle: <https://docs.angularjs.org/guide/introduction>
 
 ##Association entre les données et leur représentation
 
@@ -107,7 +106,7 @@ Lorsque l'on clique sur *Run*, le texte *Bonjour Jean-Pierre !* devrait apparai
 
 ###Pour aller plus loin
 
-<https://docs.angularjs.org/guide/databinding>
+Couplage des données dans la documentation officielle: <https://docs.angularjs.org/guide/databinding>
 
 ##MVW
 
@@ -165,9 +164,13 @@ Le code Javascript du contrôleur devrait alors ressembler à :
     }); 
     
 ###Pour aller plus loin
-* <https://docs.angularjs.org/api/ng/type/$rootScope.Scope>
-* <https://docs.angularjs.org/api/ngResource/service/$resource>
-* <https://plus.google.com/+AngularJS/posts/aZNVhj355G2>
+
+Dans la documentation officielle:
+
+* Le scope: <https://docs.angularjs.org/api/ng/type/$rootScope.Scope>
+* Les ressources: <https://docs.angularjs.org/api/ngResource/service/$resource>
+
+Pourquoi MVW: <https://plus.google.com/+AngularJS/posts/aZNVhj355G2>
 
 ##Injection de dépendances
 
@@ -228,8 +231,12 @@ Ajouter la variable de template correspondante dans *index.html* :
     </div>
 
 ###Pour alle plus loin
-* <https://docs.angularjs.org/guide/di>
-* <https://docs.angularjs.org/api/ngResource/service/$resource>
+
+Dans la documentation officielle:
+
+* Injection de dépendances dans le cadre d'AngularJS: <https://docs.angularjs.org/guide/di>
+* Fournisseurs de services et d'objets spécialisés: <https://docs.angularjs.org/guide/providers>
+* Ressources: <https://docs.angularjs.org/api/ngResource/service/$resource>
 
 
 ##Directives
@@ -268,8 +275,8 @@ Et enfin, modifier l'appel à la balise :
     <address street="'50 cours de la République'" city="'Villeurbanne'"></address>
 
 ###Pour aller plus loin
-<https://docs.angularjs.org/guide/directive>
+Les directives dans la documentation officielle: <https://docs.angularjs.org/guide/directive>
 
-## Intégralité du code source de l'exercice
+##Intégralité du code source de l'exercice
 
-L'ensemble du code source est disponible sur <http://plnkr.co/edit/YjqYsh> .
+L'ensemble du code source est disponible sur <http://plnkr.co/edit/YjqYsh> 

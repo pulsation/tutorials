@@ -48,7 +48,7 @@ Enfin, le système de directives permet de créer des composants réutilisables,
 * https://docs.angularjs.org/guide/introduction 
 * https://docs.angularjs.org/guide/providers 
 
-##Associer entre les données et leur représentation
+##Association entre les données et leur représentation
 
 Comme indiqué précédemment, AngularJS se base sur une implémentation du dialecte proposé par jQuery (avec lequel il est compatible) pour manipuler le DOM à bas niveau. Cela lui permet de fournir un système de liaison (ou *binding*) bidirectionnelle entre les éléments de la vue et les variables qui leurs sont associées. Il en résulte une mise à jour immédiate et implicite de la vue lorsque le contenu des variables change par programmation, et inversement.
 

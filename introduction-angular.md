@@ -55,11 +55,11 @@ Comme indiqué précédemment, AngularJS se base sur une implémentation du dial
 
 Dans le fichier *script.js*, ajouter
 
-    var app = angular.module('hinnoya', ['ui']);
+    var app = angular.module('example', ['ui']);
     
 afin d'instancier un nouvelle application. Nous pouvons maintenant l'associer à la balise `<html>` dans le fichier *index.html* en lui ajoutant un attribut `ng-app` :
 
-    <html ng-app="hinnoya">
+    <html ng-app="example">
 
 ###Exercice 2 : Création d'un contrôleur
 
@@ -84,7 +84,7 @@ Cela permet d'initialiser la variable `name` qui va être utilisée dans le temp
 Le fichier *script.js* devrait maintenant ressembler à ceci:
 
     // Code goes here
-    var app = angular.module('hinnoya', ['ui', 'ngResource']);
+    var app = angular.module('example', ['ui', 'ngResource']);
     
     app.controller('MainCtrl', function($scope) {
         $scope.name = "Jean-Pierre";
@@ -188,7 +188,7 @@ correspondante dans le code HTML.
 
 Dans *script.js*, ajouter `'ngResource'` au même niveau qu'`'ui'` lors de la définition de l'application :
     
-    var app = angular.module('hinnoya', ['ui', 'ngResource']);
+    var app = angular.module('example', ['ui', 'ngResource']);
 
 ###Exercice 8 : Création d'une factory *Weather* pour étendre un composant Angular existant
 

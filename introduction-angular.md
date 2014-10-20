@@ -125,7 +125,7 @@ D'autre part, par le biais de l'idiome `$watch`, il est possible de déclencher 
 Dans index.html, ajouter la balise input suivante à la suite de la ligne qui débute par `<h1>` :
 
     <h1>Hello {{name}}!</h1>
-    <input type="text" ng-model="name"></type>
+    <input type="text" ng-model="name" />
 
 L'attribut *ng-model* permet d'indiquer à quelle variable contenue dans `$scope` cet élément visuel est lié. Ainsi, lorsque l'on modifie la valeur située dans le champ de saisie défini par la balise input, la valeur de la variable du ViewModel name sera automatiquement mise à jour.
 

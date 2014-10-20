@@ -49,13 +49,13 @@ Introduction officielle: <https://docs.angularjs.org/guide/introduction>
 
 ##Association entre les données et leur représentation
 
-Comme indiqué précédemment, AngularJS se base sur une implémentation du dialecte proposé par jQuery (avec lequel il est compatible) pour manipuler le DOM à bas niveau. Cela lui permet de fournir un système de liaison (ou *binding*) bidirectionnelle entre les éléments de la vue et les variables qui leurs sont associées. Il en résulte une mise à jour immédiate et implicite de la vue lorsque le contenu des variables change par programmation, et inversement.
+Comme indiqué précédemment, AngularJS se base sur une implémentation du dialecte proposé par jQuery (avec lequel il est compatible) pour manipuler le DOM à bas niveau. Cela lui permet de fournir un système de liaison (ou *binding*) bidirectionnelle entre les éléments de la vue et les variables qui leur sont associées. Il en résulte une mise à jour immédiate et implicite de la vue lorsque le contenu des variables change par programmation, et inversement.
 
 ###Exercice 1 : Création d'une application
 
 Dans le fichier *script.js*, ajouter
 
-    var app = angular.module('example', ['ui']);
+    var app = angular.module('example', []);
     
 afin d'instancier un nouvelle application. Nous pouvons maintenant l'associer à la balise `<html>` dans le fichier *index.html* en lui ajoutant un attribut `ng-app` :
 
@@ -84,7 +84,7 @@ Cela permet d'initialiser la variable `name` qui va être utilisée dans le temp
 Le fichier *script.js* devrait maintenant ressembler à ceci:
 
     // Code goes here
-    var app = angular.module('example', ['ui', 'ngResource']);
+    var app = angular.module('example', []);
     
     app.controller('MainCtrl', function($scope) {
         $scope.name = "Jean-Pierre";
@@ -102,7 +102,7 @@ Remplacer le mot `Plunker` par `{{name}}` pour obtenir:
 
     <h1>Hello {{name}}!</h1>
 
-Lorsque l'on clique sur *Run*, le texte *Bonjour Jean-Pierre !* devrait apparaitre.
+Lorsque l'on clique sur *Run*, le texte *Hello Jean-Pierre !* devrait apparaitre.
 
 ###Pour aller plus loin
 
@@ -116,7 +116,7 @@ La couche *View* est la représentation visuelle des données manipulées par l'
 
 La couche *ViewModel* correspond à la représentation programmatique de ces données visuelles. Lorsqu'on utilise Angular, il s'agit de l'idiome `$scope`.
 
-Enfin, la couche *Model* décrit les données représentées par l'application ainsi que les traitements qui leurs sont appliqués. Dans le cas d'AngularJS, elles sont manipulées par des contrôleurs (au sens MVC). Il est tout à fait possible de déléguer la gestion de la couche modèle à un serveur distant par l'intermédiaire de "resources" RESTful.
+Enfin, la couche *Model* décrit les données représentées par l'application ainsi que les traitements qui leur sont appliqués. Dans le cas d'AngularJS, elles sont manipulées par des contrôleurs (au sens MVC). Il est tout à fait possible de déléguer la gestion de la couche modèle à un serveur distant par l'intermédiaire de "resources" RESTful.
 
 D'autre part, par le biais de l'idiome `$watch`, il est possible de déclencher une fonction écouteur dès qu'une variable de `$scope` est mise à jour.
 
@@ -180,15 +180,15 @@ Dans un module Angular, les méthodes de type fabrique (ou *factory*) permettent
 
 Cliquer sur l'icône correspondant à un livre complètement à droite de la page Plunker (*find and external libraries*).
 
-Rechercher *angular-resource* puis cliquer sur la baguette magique à côté du résultat pour l'inclure. Cela ajouter automatiquement la balise 
+Rechercher *angular-resource* puis cliquer sur la baguette magique à côté du résultat pour l'inclure. Cela ajoute automatiquement la balise 
 
     <script data-require="angular-resource@*" data-semver="1.2.14" src="http://code.angularjs.org/1.2.14/angular-resource.js"></script>
 
 correspondante dans le code HTML.
 
-Dans *script.js*, ajouter `'ngResource'` au même niveau qu'`'ui'` lors de la définition de l'application :
+Dans *script.js*, ajouter une référence au module `'ngResource'` au niveau de la définition de l'application :
     
-    var app = angular.module('example', ['ui', 'ngResource']);
+    var app = angular.module('example', ['ngResource']);
 
 ###Exercice 8 : Création d'une factory *Weather* pour étendre un composant Angular existant
 
@@ -216,7 +216,7 @@ Ajouter la factory Weather à injecter parmi les paramètres du contrôleur, à 
 
 ###Exercice 10 : Appel d'un webservice
 
-Dans *script.js*, Appeler la resource qui correspond au webservice, et lorsque la requête HTTP est exécutée,  affecter la bonne valeur à la variable `weather` de `$scope` :
+Dans *script.js*, Appeler la ressource qui correspond au webservice, et lorsque la requête HTTP est exécutée,  affecter la bonne valeur à la variable `weather` de `$scope` :
 
     $scope.weather = "Unknown";
     Weather.get({place: "Lyon,France"}).$promise.then(function (data) {
@@ -230,7 +230,7 @@ Ajouter la variable de template correspondante dans *index.html* :
       La météo aujourd'hui: {{weather}}
     </div>
 
-###Pour alle plus loin
+###Pour aller plus loin
 
 Dans la documentation officielle:
 
@@ -257,7 +257,7 @@ Il est maintenant possible d'utiliser une balise `<address>` directement dans le
 
     <address></address>
 
-###Exercice 12 : Paramétres de la directive
+###Exercice 12 : Paramètres de la directive
 
 Au dessus du template de la directive, on peut définir des paramètres que l'on pourra donner à la balise :
 

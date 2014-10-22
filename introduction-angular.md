@@ -274,9 +274,64 @@ Et enfin, modifier l'appel à la balise :
 
     <address street="'50 cours de la République'" city="'Villeurbanne'"></address>
 
+###Exercice 13 : Directives imbriquées
+
+Tout d'abord, l'utilisation de la directive que nous venons de créer doit être restreinte aux balises. Pour ce faire, ajouter:
+
+    restrict: 'E',
+    
+au-dessus de la définition de son template. Le code de la directive *address* devrait maintenant ressembler à ceci:
+
+    app.directive('address', function () {
+      return {
+        scope: {
+          street : '=',
+          city: '='
+        },
+        restrict: 'E',
+        template: '<p><div class="glyphicon glyphicon-road"></div> {{street}}, {{city}}</p>'
+      };
+    });
+
+Maintenant, nous pouvons créer une directive *customer* dont le template référence la directive précédente:
+
+    app.directive('customer', function () {
+      return {
+        scope: {
+          customer: '='
+        },
+        restrict: 'E',
+        template: '<p>{{customer.name}}</p><address street="customer.address.street" city="customer.address.city"></address>'
+      }
+    });
+
+Créons mainteant un objet nommé *customer1* dans notre contrôleur principal:
+
+    $scope.customer1 = {name: "Jean-Patrick", address: { city: "Paris", street: "25 Boulevard Haussmann" }};
+    
+Appeler notre nouvelle directive dans *index.html* :
+
+    <input type="text" ng-model="customer1.name" />
+    <customer customer='customer1'></customer>
+
+###Exercice 14 : Directive avec contrôleur
+
+Il est tout à fait possible de créer un sous-contrôleur associé à une directive, afin de pouvoir manipuler les données auxquelles elle est associée.
+
+Ajoutons par exemple un contrôleur dont le rôle est de transformer le nom du client en lettres majuscules, à la suite du template de notre directive *customer* :
+
+    controller: function ($scope) {
+      $scope.$watch('customer.name', function (newVal, oldVal) {
+        var uppedVal = newVal.toUpperCase();
+        if (newVal != uppedVal) {
+          $scope.customer.name = uppedVal;
+        }
+      });
+    }
+
 ###Pour aller plus loin
 Les directives dans la documentation officielle: <https://docs.angularjs.org/guide/directive>
 
 ##Intégralité du code source de l'exercice
 
-L'ensemble du code source est disponible sur <http://plnkr.co/edit/YjqYsh> 
+L'ensemble du code source est disponible sur <http://plnkr.co/edit/W6DgQQ> 
